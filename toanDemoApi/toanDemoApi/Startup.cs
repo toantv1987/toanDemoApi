@@ -14,6 +14,8 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using toanDemoApi.Data;
+using toanDemoApi.Service;
+using toanDemoApi.Service.Interfaces;
 
 namespace toanDemoApi
 {
@@ -30,6 +32,8 @@ namespace toanDemoApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddScoped<IVendorRepository, VendorRepository>();
             //    services.AddDbContextPool<OrdersManagerDbContext>(options => options.UseSqlServer("Server=Toantv\\toantv; Database=OrdersManager; Trusted_Connection=True;User ID=aih;Password=123456")));
             services.AddDbContextPool<OrdersManagerDbContext>(option => option.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=BulkyBook;Trusted_Connection=True;MultipleActiveResultSets=true"));
         }

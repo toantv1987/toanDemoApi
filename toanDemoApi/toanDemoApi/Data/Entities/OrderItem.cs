@@ -40,6 +40,6 @@ namespace toanDemoApi.Data.Entities
         public CompanyOrder Order { get; set; }
 
         [ForeignKey("CategoryId")]
-        public Category Category { get; set; };
+        public Category Category { get; set; } 
     }
 }
