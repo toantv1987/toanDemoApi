@@ -11,6 +11,10 @@ namespace toanDemoApi.Service
     public class VendorRepository : IVendorRepository
     {
         private readonly OrdersManagerDbContext _context;
+        public VendorRepository(OrdersManagerDbContext context)
+        {
+            _context = context;
+        }
        
         public void AddVendor(Vendor vendor)
         {
@@ -31,6 +35,9 @@ namespace toanDemoApi.Service
         {
             return _context.Vendors.ToList<Vendor>();
         }
-       
+       public bool Save()
+        {
+            return (_context.SaveChanges() >= 0);
+        }
     }
 }

@@ -1,0 +1,78 @@
+﻿@model IEnumerable<ToantvOrderManageNetCore.Data.Models.CompanyOrder.CompanyOrderDto>
+
+@{
+    ViewData["Title"] = "GetCompanyOrder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>GetCompanyOrder</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InternalOrderNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExternalOrderNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PurchaseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArrivalDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VendorDto.VendorName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InternalOrderNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExternalOrderNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchaseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrivalDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comments)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorDto.VendorName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CompanyOrderId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CompanyOrderId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CompanyOrderId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

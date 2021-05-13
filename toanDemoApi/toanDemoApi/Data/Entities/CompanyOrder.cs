@@ -5,6 +5,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
+using toanDemoApi.Data.Models.Vendor;
+
 namespace toanDemoApi.Data.Entities
 {
     [Table("CompanyOrder")]
@@ -28,11 +30,11 @@ namespace toanDemoApi.Data.Entities
 
         [Column("PurchaseDate")]
         //[Sieve(CanSort = true)]
-        public DateTime? PurchaseDate { get; set; }
+        public DateTime  PurchaseDate { get; set; }
 
         [Column("ArrivalDate")]
        // [Sieve(CanSort = true)]
-        public DateTime? ArrivalDate { get; set; }
+        public DateTime  ArrivalDate { get; set; }
 
         [Column("Status")]
         public string Status { get; set; }
@@ -45,7 +47,7 @@ namespace toanDemoApi.Data.Entities
         public string Comments { get; set; }
 
         [ForeignKey("VendorId")]
-        public Vendor Vendor { get; set; } = new Vendor { };
+        public Vendor Vendor { get; set; } 
 
     }
 }

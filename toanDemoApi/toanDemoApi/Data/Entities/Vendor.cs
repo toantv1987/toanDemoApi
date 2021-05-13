@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace toanDemoApi.Data.Entities
 {
-    [Table("Vender")]
+    [Table("Vendor")]
     public class Vendor
     {
         [Key]

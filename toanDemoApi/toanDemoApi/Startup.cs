@@ -34,8 +34,11 @@ namespace toanDemoApi
             services.AddControllers();
 
             services.AddScoped<IVendorRepository, VendorRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IOrderItemRepository, OrderItemRepository>();
+            services.AddScoped<ICompanyOrderRepository, CompanyOrderRepository>();
             //    services.AddDbContextPool<OrdersManagerDbContext>(options => options.UseSqlServer("Server=Toantv\\toantv; Database=OrdersManager; Trusted_Connection=True;User ID=aih;Password=123456")));
-            services.AddDbContextPool<OrdersManagerDbContext>(option => option.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=BulkyBook;Trusted_Connection=True;MultipleActiveResultSets=true"));
+            services.AddDbContextPool<OrdersManagerDbContext>(option => option.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=OrdersManager;Trusted_Connection=True;MultipleActiveResultSets=true"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
